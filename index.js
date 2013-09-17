@@ -9,6 +9,7 @@ module.exports = function (cb) {
     t.addRule(/^\/\/[^\n]*$/, 'line comment');
     t.addRule(/^"([^"\n]|\\")*"?$/, 'quote');
     t.addRule(/^'(\\?[^'\n]|\\')'?$/, 'char');
+    t.addRule(/^'[^']*$/, 'char continue');
     
     t.addRule(/^#(\S*)$/, 'directive');
     

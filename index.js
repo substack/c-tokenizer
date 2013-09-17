@@ -8,6 +8,7 @@ module.exports = function (cb) {
     
     t.addRule(/^\/\/[^\n]*$/, 'line comment');
     t.addRule(/^"([^"\n]|\\")*"?$/, 'quote');
+    t.addRule(/^'(\\?[^'\n]|\\')'?$/, 'char');
     
     t.addRule(/^#(\S*)$/, 'directive');
     
@@ -18,8 +19,10 @@ module.exports = function (cb) {
     t.addRule(/^{$/, 'open curly');
     t.addRule(/^}$/, 'close curly');
     
-    t.addRule(/^([-<>~!%^&*\/+=|.,:;]|->|<<|>>|\*\*|\|\||&&|--|\+\+|[-+*|&%\/=]=)$/, 'operator');
-    t.addRule(/^<([^>\n]*)>?$/, 'angle quote'); // for c++ templates
+    t.addRule(
+        /^([-<>~!%^&*\/+=?|.,:;]|->|<<|>>|\*\*|\|\||&&|--|\+\+|[-+*|&%\/=]=)$/,
+        'operator'
+    );
     
     t.addRule(/^([_A-Za-z]\w*)$/, 'identifier');
     

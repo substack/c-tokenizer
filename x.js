@@ -1,6 +1,6 @@
 var Tokenizer = require('tokenizer');
-var t = new Tokenizer(function () {
-    console.log(arguments);
+var t = new Tokenizer(function (src, target) {
+    console.log(target.type + ' => ' + JSON.stringify(src));
 });
 t.addRule(/^\/\*([^*](?!\/))*(?:\*(?:\/)?)?$/, 'area comment');
 

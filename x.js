@@ -7,9 +7,7 @@ t.addRule(/^\/\*([^*]|\*(?!\/))*\*\/$/, 'area comment');
 t.addRule(/^\/\*([^*]|\*(?!\/))*\*?$/, 'area comment continue');
 
 t.addRule(/^\/\/[^\n]*$/, 'line comment');
-
 t.addRule(/^"([^"\n]|\\")*"?$/, 'quote');
-//t.addRule(/^"([^"\n]|\\")*(!?")/, 'quote continue');
 
 t.addRule(token('#define'), 'define');
 t.addRule(token('#include'), 'include');
@@ -25,7 +23,7 @@ t.addRule(/^{$/, 'open curly');
 t.addRule(/^}$/, 'close curly');
 
 t.addRule(/^([-<>~!%^&*\/+=|.,:;]|<<|>>|\*\*|\|\||&&|--|\+\+|[-+*|&%\/=]=)$/, 'operator');
-t.addRule(/^<[^>\n]*>$/, 'angle quote'); // for c++ templates
+t.addRule(/^<([^>\n]*)>?$/, 'angle quote'); // for c++ templates
 
 t.addRule(/^([_A-Za-z]\w*)$/, 'identifier');
 

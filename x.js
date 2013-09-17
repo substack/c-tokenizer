@@ -33,13 +33,8 @@ t.addRule(/^(\s+)$/, 'whitespace');
 process.stdin.pipe(t);
 
 function token (s) {
-    return re('^' + allPrefixes(s) + '$');
+    return RegExp(
+        '^' + s.split('').map(function (c) { return '(' + c; }).join('')
+        + Array(s.length + 1).join(')?') + '$'
+    );
 }
-
-function allPrefixes (s) {
-    return s.split('').map(function (c) {
-        return '(' + c;
-    }).join('') + Array(s.length + 1).join(')?');
-}
-
-function re (s) { return RegExp(s) }

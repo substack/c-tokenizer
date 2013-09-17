@@ -30,5 +30,7 @@ module.exports = function (cb) {
     t.addRule(/^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/, 'number');
     t.addRule(/^(\s+)$/, 'whitespace');
     
+    t.addRule(/^\\\n?$/, 'line continue');
+    
     return t;
 };

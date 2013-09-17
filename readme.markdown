@@ -2,6 +2,8 @@
 
 [tokenize](https://npmjs.org/package/tokenize) C/C++ source code
 
+[![build status](https://secure.travis-ci.org/substack/c-tokenizer.png)](http://travis-ci.org/substack/c-tokenizer)
+
 # example
 
 ``` js

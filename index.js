@@ -27,7 +27,7 @@ module.exports = function (cb) {
     
     t.addRule(/^([_A-Za-z]\w*)$/, 'identifier');
     
-    t.addRule(/^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/, 'number');
+    t.addRule(/^[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$/, 'number');
     t.addRule(/^(\s+)$/, 'whitespace');
     
     t.addRule(/^\\\n?$/, 'line continue');

@@ -7,7 +7,7 @@
 # example
 
 ``` js
-var tokenize = require('tokenize')
+var tokenize = require('c-tokenizer')
 var t = tokenize(function (src, token) {
   console.log(token.type + ' => ' + JSON.stringify(src))
 })
